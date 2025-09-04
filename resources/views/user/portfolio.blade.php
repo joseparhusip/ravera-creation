@@ -54,11 +54,7 @@
         cursor: pointer;
     }
     
-    .category-btn:hover {
-        background-color: #C5B358;
-        color: #FFFFFF;
-    }
-    
+    .category-btn:hover,
     .category-btn.active {
         background-color: #C5B358;
         color: #FFFFFF;
@@ -212,7 +208,7 @@
         border-radius: 2px;
     }
     
-    /* === Blog Post Specific Styling === */
+    /* === Blog Post & Other Sections Specific Styling === */
     .blog-info, .testimonial-info, .wedding-info, .makeup-info {
         text-align: center;
         margin-bottom: 40px;
@@ -344,7 +340,7 @@
         color: #555;
     }
     
-    /* === PRICE SECTION STYLING (SEPARATE SECTION) === */
+    /* === PRICE SECTION STYLING === */
     .price-section {
         padding: 80px 20px;
         background-color: #ffffff;
@@ -450,7 +446,6 @@
         color: #C5B358;
     }
 
-    /* === NEW STYLING FOR 'PILIH PAKET' BUTTON === */
     .select-package-btn {
         width: 60px;
         height: 60px;
@@ -495,7 +490,6 @@
         background-color: #ffffff;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
-    /* === END OF NEW STYLING === */
 
     /* === MODAL STYLING === */
     .image-modal {
@@ -540,31 +534,21 @@
     }
 
     @media (min-width: 768px) {
-        .testimonial-card-item {
-            flex-direction: row;
-        }
-        .testimonial-card-item .testimonial-image {
-            width: 40%;
-        }
-        .testimonial-card-item .testimonial-content {
-            width: 60%;
-        }
-        
-        .blog-post-item {
+        .testimonial-card-item, .blog-post-item {
             flex-direction: row;
             gap: 30px;
         }
-        .blog-post-item .blog-image {
-            width: 50%;
-            height: auto;
-        }
-        .blog-post-item .blog-content {
-            width: 50%;
-        }
+        .testimonial-card-item .testimonial-image { width: 40%; }
+        .testimonial-card-item .testimonial-content { width: 60%; }
+        .blog-post-item .blog-image { width: 50%; height: auto; }
+        .blog-post-item .blog-content { width: 50%; }
     }
     
     @media (max-width: 768px) {
-        .portfolio-subtitle {
+        .portfolio-subtitle,
+        .wedding-info .wedding-title-main,
+        .makeup-info .makeup-title-main,
+        .price-info .price-title-main {
             font-size: 2.5rem;
         }
         .portfolio-grid {
@@ -573,13 +557,6 @@
         }
         .portfolio-item {
             height: 250px;
-        }
-        .wedding-info .wedding-title-main,
-        .makeup-info .makeup-title-main {
-            font-size: 2.5rem;
-        }
-        .price-info .price-title-main {
-            font-size: 2.5rem;
         }
         .price-card {
             width: 100%;
@@ -782,83 +759,54 @@
         const weddingContentContainer = document.getElementById('wedding-content-container');
         const makeupContentContainer = document.getElementById('makeup-content-container');
         const readMoreBtn = document.getElementById('read-more-btn');
-
-        // Modal functionality
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeModal = document.querySelector('.modal-close');
 
-        // Function to filter and show content based on category
         function filterContent(category) {
-            // Hide all content containers first
+            // Hide all content containers
             photoGridContainer.style.display = 'none';
             blogContentContainer.style.display = 'none';
             testimoniContentContainer.style.display = 'none';
             weddingContentContainer.style.display = 'none';
             makeupContentContainer.style.display = 'none';
 
-            // Show the relevant content container based on category
+            // Show relevant content based on category
             if (category === 'blog') {
                 blogContentContainer.style.display = 'block';
             } else if (category === 'testimoni') {
                 testimoniContentContainer.style.display = 'block';
-            } else if (category === 'wedding') {
-                weddingContentContainer.style.display = 'block';
+            } else if (category === 'wedding' || category === 'makeup-artist') {
+                if(category === 'wedding') weddingContentContainer.style.display = 'block';
+                if(category === 'makeup-artist') makeupContentContainer.style.display = 'block';
+                
                 photoGridContainer.style.display = 'grid';
                 const portfolioItems = document.querySelectorAll('.portfolio-item');
                 
-                // Hide all portfolio items in the grid
                 portfolioItems.forEach(item => item.style.display = 'none');
-                
-                // Show items for the selected photo category
-                document.querySelectorAll(`.${category}-item`).forEach(item => {
-                    item.style.display = 'block';
-                });
-            } else if (category === 'makeup-artist') {
-                makeupContentContainer.style.display = 'block';
-                photoGridContainer.style.display = 'grid';
-                const portfolioItems = document.querySelectorAll('.portfolio-item');
-                
-                // Hide all portfolio items in the grid
-                portfolioItems.forEach(item => item.style.display = 'none');
-                
-                // Show items for the selected photo category
                 document.querySelectorAll(`.${category}-item`).forEach(item => {
                     item.style.display = 'block';
                 });
             }
         }
 
-        // Add click event listener to each category button
         categoryButtons.forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-
-                // Remove 'active' class from all buttons
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Add 'active' class to the clicked button
                 this.classList.add('active');
-
-                // Get the category from the data-category attribute
                 const category = this.getAttribute('data-category');
-
-                // Filter the content
                 filterContent(category);
             });
         });
 
-        // Add click event listener to "Baca selengkapnya" link
-        readMoreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Scroll to price section
-            document.getElementById('price-section').scrollIntoView({ 
-                behavior: 'smooth' 
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('price-section').scrollIntoView({ behavior: 'smooth' });
             });
-        });
+        }
 
-        // Add click event listeners to plus buttons and portfolio items
         document.addEventListener('click', function(e) {
             const portfolioItem = e.target.closest('.portfolio-item');
             if (portfolioItem) {
@@ -871,26 +819,15 @@
             }
         });
 
-        // Close modal when clicking the X button
-        closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
+        closeModal.addEventListener('click', () => modal.style.display = 'none');
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') modal.style.display = 'none';
         });
 
-        // Close modal when clicking outside the image
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Initial content display on page load (wedding)
+        // Initial content display on page load
         filterContent('wedding');
     });
 </script>

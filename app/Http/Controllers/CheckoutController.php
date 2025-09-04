@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CheckoutController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * Menampilkan halaman checkout dengan detail paket yang dipilih.
+     */
+    public function show(string $package): View
     {
-        // Get package information from request
-        $package = $request->get('package', 'silver');
-        
-        // Define package details
+        // Data master untuk semua paket yang tersedia
         $packages = [
             'silver' => [
                 'name' => 'Paket Silver',
@@ -44,51 +45,67 @@ class CheckoutController extends Controller
             ]
         ];
         
-        $selectedPackage = $packages[$package] ?? $packages['silver'];
+        // Ambil data paket yang sesuai dari URL
+        $selectedPackage = $packages[$package] ?? null;
+
+        // Jika paket tidak ada di dalam data master, tampilkan halaman error 404
+        if (!$selectedPackage) {
+            abort(404, 'Paket tidak ditemukan.');
+        }
+
+        // Format harga agar tampilannya lebih rapi (misal: IDR 8.000.000)
+        $selectedPackage['price_formatted'] = 'IDR ' . number_format($selectedPackage['price'], 0, ',', '.');
         
-        return view('user.checkout', compact('selectedPackage', 'package'));
+        // **PERBAIKAN UTAMA:** Mengarahkan ke view yang benar di dalam folder 'user'
+        return view('user.checkout', ['packageData' => $selectedPackage]);
     }
     
+    /**
+     * Memproses data dari form checkout.
+     */
     public function process(Request $request)
     {
-        // Validate request
+        // Validasi input dari form
         $request->validate([
             'phone' => 'required|string|max:20',
             'bank' => 'required|string',
-            'package' => 'required|string',
-            'down_payment' => 'required|numeric|min:0',
+            'package' => 'required|string|in:silver,platinum,gold',
+            'down_payment' => 'required|in:0,1',
             'coupon_code' => 'nullable|string',
-            'discount_amount' => 'nullable|numeric|min:0'
+            'description' => 'nullable|string'
         ]);
         
-        // Define available coupons
+        // Data master untuk kupon dan harga (untuk perhitungan yang aman di server)
         $coupons = [
-            'ulbikeren' => 500000,   // Diskon Rp 500.000
-            'ulbimantap' => 1000000, // Diskon Rp 1.000.000
-            'ulbihebat' => 2000000   // Diskon Rp 2.000.000
+            'ULBIKEREN' => 500000,
+            'ULBIMANTAP' => 1000000,
+            'ULBIHEBAT' => 2000000
         ];
         
-        // Define package prices
         $packagePrices = [
             'silver' => 8000000,
             'platinum' => 11000000,
             'gold' => 15000000
         ];
         
-        $packagePrice = $packagePrices[$request->package] ?? $packagePrices['silver'];
+        $packagePrice = $packagePrices[$request->package];
         
-        // Calculate subtotal based on down payment
+        // Hitung subtotal berdasarkan pilihan DP (50% jika DP dipilih)
         $subtotal = $request->down_payment == '1' ? ($packagePrice * 0.5) : $packagePrice;
         
-        // Get discount amount from form hidden input
-        $discountAmount = $request->discount_amount;
+        // Hitung diskon secara aman berdasarkan kode kupon yang valid
+        $discountAmount = 0;
+        $couponCode = strtoupper($request->coupon_code);
+        if (isset($coupons[$couponCode])) {
+            $discountAmount = $coupons[$couponCode];
+        }
         
-        // Calculate final total
+        // Hitung total akhir setelah diskon dan pajak
         $finalAmount = max(0, $subtotal - $discountAmount);
         $pkpAmount = round($finalAmount * 0.001); // PKP 0.1%
         $totalAmount = $finalAmount + $pkpAmount;
         
-        // Store order data (you can save this to database)
+        // Siapkan data pesanan untuk disimpan ke session
         $orderData = [
             'phone' => $request->phone,
             'bank' => $request->bank,
@@ -103,17 +120,24 @@ class CheckoutController extends Controller
             'created_at' => now()
         ];
         
-        // Process the order (save to database, send email, etc.)
-        // For now, just redirect with success message
-        
+        // Simpan data ke session dan arahkan ke halaman sukses
         session(['order_data' => $orderData]);
-        
         return redirect()->route('checkout.success')->with('success', 'Pesanan Anda berhasil diproses!');
     }
     
+    /**
+     * Menampilkan halaman sukses setelah checkout.
+     */
     public function success()
     {
         $orderData = session('order_data');
+        
+        // Jika tidak ada data di session, kembalikan ke halaman utama
+        if(!$orderData) {
+            return redirect('/');
+        }
+        
+        // **PERBAIKAN UTAMA:** Mengarahkan ke view success yang benar di dalam folder 'user'
         return view('user.checkout-success', compact('orderData'));
     }
 }

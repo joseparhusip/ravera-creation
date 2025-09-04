@@ -34,10 +34,9 @@
             z-index: 1000;
         }
 
-        /* --- SKELETON LOADING STYLES --- */
+        /* --- SKELETON LOADING STYLES - FIXED TO LIGHT COLORS --- */
         .skeleton {
-            background-color: #e2e2e2;
-            background-image: linear-gradient(90deg, #e2e2e2 0px, #f5f5f5 40px, #e2e2e2 80px);
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%;
             animation: skeleton-loading 1.5s infinite linear;
             border-radius: 4px;
@@ -55,14 +54,24 @@
         .skeleton-text {
             height: 14px;
             margin-bottom: 8px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite linear;
+            border-radius: 4px;
         }
 
         .skeleton-text-short {
             width: 60%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite linear;
         }
 
         .skeleton-circle {
             border-radius: 50%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite linear;
         }
     </style>
 </head>

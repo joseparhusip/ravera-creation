@@ -336,6 +336,323 @@
         line-height: 1.2;
     }
 
+    /* === SKELETON LOADING STYLES - FIXED === */
+    .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+        border-radius: 4px;
+    }
+
+    @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+
+    /* Skeleton for page header */
+    .page-header-skeleton .skeleton-title {
+        height: 40px;
+        width: 400px;
+        margin: 0 auto 20px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    /* Skeleton for about section */
+    .about-text-skeleton {
+        flex-basis: 50%;
+        min-width: 300px;
+    }
+
+    .about-text-skeleton .skeleton-heading {
+        height: 35px;
+        width: 350px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    .about-text-skeleton .skeleton-heading-2 {
+        height: 45px;
+        width: 280px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    .about-text-skeleton .skeleton-paragraph {
+        height: 16px;
+        margin-bottom: 12px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    .about-text-skeleton .skeleton-paragraph:nth-child(4) { width: 100%; }
+    .about-text-skeleton .skeleton-paragraph:nth-child(5) { width: 95%; }
+    .about-text-skeleton .skeleton-paragraph:nth-child(6) { width: 85%; }
+    .about-text-skeleton .skeleton-paragraph:nth-child(7) { width: 90%; }
+    .about-text-skeleton .skeleton-paragraph:nth-child(8) { width: 75%; }
+
+    .about-text-skeleton .skeleton-button {
+        height: 50px;
+        width: 140px;
+        margin-top: 25px;
+        border-radius: 25px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    .about-features-skeleton {
+        flex-basis: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: 400px;
+    }
+
+    .feature-box-skeleton {
+        height: 120px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    /* Skeleton for profile section */
+    .profile-container-skeleton {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .profile-container-skeleton .skeleton-subtitle {
+        height: 25px;
+        width: 80px;
+        margin: 0 auto 20px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .profile-container-skeleton .skeleton-title {
+        height: 45px;
+        width: 400px;
+        margin: 0 auto 30px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .profile-container-skeleton .skeleton-paragraph {
+        height: 18px;
+        margin: 0 auto 12px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .profile-container-skeleton .skeleton-paragraph:nth-child(4) { width: 100%; }
+    .profile-container-skeleton .skeleton-paragraph:nth-child(5) { width: 95%; }
+    .profile-container-skeleton .skeleton-paragraph:nth-child(6) { width: 90%; }
+    .profile-container-skeleton .skeleton-paragraph:nth-child(7) { width: 85%; }
+    .profile-container-skeleton .skeleton-paragraph:nth-child(8) { width: 70%; }
+
+    .profile-container-skeleton .skeleton-social-title {
+        height: 25px;
+        width: 180px;
+        margin: 40px auto 20px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .profile-container-skeleton .skeleton-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .profile-container-skeleton .skeleton-social-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    @keyframes loadingWhite {
+        0% { 
+            background-position: 200% 0; 
+        }
+        100% { 
+            background-position: -200% 0; 
+        }
+    }
+
+    /* Skeleton for team section */
+    .team-container-skeleton {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .team-container-skeleton .skeleton-title {
+        height: 50px;
+        width: 450px;
+        margin: 30px auto 60px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .team-grid-skeleton {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        margin-top: 60px;
+    }
+
+    .team-member-skeleton {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px 20px;
+        border: 1px solid rgba(197, 179, 88, 0.2);
+    }
+
+    .team-member-skeleton .skeleton-photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 20px;
+        margin: 0 auto 20px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .team-member-skeleton .skeleton-name {
+        height: 24px;
+        width: 280px;
+        margin: 0 auto 10px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .team-member-skeleton .skeleton-role {
+        height: 16px;
+        width: 200px;
+        margin: 0 auto 20px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .team-member-skeleton .skeleton-description {
+        height: 14px;
+        margin: 0 auto 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .team-member-skeleton .skeleton-description:nth-child(5) { width: 100%; }
+    .team-member-skeleton .skeleton-description:nth-child(6) { width: 95%; }
+    .team-member-skeleton .skeleton-description:nth-child(7) { width: 85%; }
+    .team-member-skeleton .skeleton-description:nth-child(8) { width: 75%; }
+
+    /* Skeleton for vision mission section */
+    .vision-mission-container-skeleton {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .vision-mission-container-skeleton .skeleton-main-title {
+        height: 50px;
+        width: 450px;
+        margin: 0 auto 60px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .vision-mission-container-skeleton .skeleton-section-title {
+        height: 40px;
+        width: 120px;
+        margin: 40px auto 20px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0.25) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+    }
+
+    .vision-mission-container-skeleton .skeleton-paragraph {
+        height: 18px;
+        margin: 0 auto 12px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+        max-width: 700px;
+    }
+
+    .vision-mission-container-skeleton .skeleton-paragraph.vision:nth-child(4) { width: 90%; }
+    .vision-mission-container-skeleton .skeleton-paragraph.vision:nth-child(5) { width: 70%; }
+
+    .vision-mission-container-skeleton .skeleton-list-item {
+        height: 16px;
+        margin: 0 auto 15px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 75%);
+        background-size: 200% 100%;
+        animation: loadingWhite 1.5s infinite;
+        max-width: 700px;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .vision-mission-container-skeleton .skeleton-list-item:nth-child(7) { width: 95%; }
+    .vision-mission-container-skeleton .skeleton-list-item:nth-child(8) { width: 85%; }
+    .vision-mission-container-skeleton .skeleton-list-item:nth-child(9) { width: 90%; }
+
+    .loading-state {
+        display: block;
+    }
+
+    .loaded-state {
+        display: none;
+    }
+
+    .content-loaded .loading-state {
+        display: none;
+    }
+
+    .content-loaded .loaded-state {
+        display: block;
+    }
+
     @media (max-width: 768px) {
         .main-container {
             padding-top: 20px;
@@ -369,123 +686,259 @@
         .vision-mission-container ol {
             text-align: center;
         }
+
+        /* Mobile skeleton adjustments */
+        .page-header-skeleton .skeleton-title {
+            width: 300px;
+            height: 35px;
+        }
+
+        .about-text-skeleton .skeleton-heading {
+            width: 250px;
+            height: 30px;
+        }
+
+        .about-text-skeleton .skeleton-heading-2 {
+            width: 200px;
+            height: 35px;
+        }
+
+        .profile-container-skeleton .skeleton-title {
+            width: 280px;
+            height: 35px;
+        }
+
+        .team-container-skeleton .skeleton-title {
+            width: 320px;
+            height: 40px;
+        }
+
+        .team-member-skeleton .skeleton-photo {
+            width: 180px;
+            height: 180px;
+        }
+
+        .vision-mission-container-skeleton .skeleton-main-title {
+            width: 320px;
+            height: 40px;
+        }
     }
 </style>
 
-<div class="main-container">
-    <header class="page-header">
-        <h1>Pelajari Lainnya Tentang Kami</h1>
-    </header>
+<!-- SKELETON LOADING STATE -->
+<div class="loading-state">
+    <!-- Page Header Skeleton -->
+    <div class="main-container">
+        <header class="page-header page-header-skeleton">
+            <div class="skeleton skeleton-title"></div>
+        </header>
 
-    <section class="about-section">
-        <div class="about-text">
-            <h2>
-                Kenapa Harus<br>
-                <span class="heading-line-2">Ravera Creation?</span>
-            </h2>
-            
-            <p class="text-dark">
-                <strong>Ravera Creation</strong> adalah Wedding Organizer
-                terpercaya yang membantu mewujudkan pernikahan
-                impian anda secara elegan dan berkesan. Dengan tim
-                profesional, layanan lengkap, dan konsep yang
-                disesuaikan, kami hadir untuk mendampingi setiap
-                proses hingga hari pernikahan berjalan lancar
-                dan sempurna.
-            </p>
-            
-            <a href="#profil-ravera" class="btn-more">TENTANG ></a>
+        <section class="about-section">
+            <div class="about-text-skeleton">
+                <div class="skeleton skeleton-heading"></div>
+                <div class="skeleton skeleton-heading-2"></div>
+                <div class="skeleton skeleton-paragraph"></div>
+                <div class="skeleton skeleton-paragraph"></div>
+                <div class="skeleton skeleton-paragraph"></div>
+                <div class="skeleton skeleton-paragraph"></div>
+                <div class="skeleton skeleton-paragraph"></div>
+                <div class="skeleton skeleton-button"></div>
+            </div>
+            <div class="about-features-skeleton">
+                <div class="skeleton feature-box-skeleton"></div>
+                <div class="skeleton feature-box-skeleton"></div>
+                <div class="skeleton feature-box-skeleton"></div>
+                <div class="skeleton feature-box-skeleton"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Profile Section Skeleton -->
+    <section class="profile-section">
+        <div class="profile-container-skeleton">
+            <div class="skeleton skeleton-subtitle"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-paragraph"></div>
+            <div class="skeleton skeleton-paragraph"></div>
+            <div class="skeleton skeleton-paragraph"></div>
+            <div class="skeleton skeleton-paragraph"></div>
+            <div class="skeleton skeleton-paragraph"></div>
+            <div class="skeleton skeleton-social-title"></div>
+            <div class="skeleton-social-icons">
+                <div class="skeleton skeleton-social-icon"></div>
+                <div class="skeleton skeleton-social-icon"></div>
+            </div>
         </div>
-        <div class="about-features">
-            <div class="feature-box">
-                <img src="/assets/img/our-vision.png" alt="Our Vision Icon">
+    </section>
+
+    <!-- Team Section Skeleton -->
+    <section class="team-section">
+        <div class="team-container-skeleton">
+            <div class="skeleton skeleton-title"></div>
+            
+            <div class="team-grid-skeleton">
+                <div class="team-member-skeleton">
+                    <div class="skeleton skeleton-photo"></div>
+                    <div class="skeleton skeleton-name"></div>
+                    <div class="skeleton skeleton-role"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                </div>
+
+                <div class="team-member-skeleton">
+                    <div class="skeleton skeleton-photo"></div>
+                    <div class="skeleton skeleton-name"></div>
+                    <div class="skeleton skeleton-role"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                    <div class="skeleton skeleton-description"></div>
+                </div>
             </div>
-            <div class="feature-box">
-                <img src="/assets/img/our-mision.png" alt="Our Mission Icon">
-            </div>
-            <div class="feature-box">
-                <img src="/assets/img/our-team.png" alt="Our Team Icon">
-            </div>
-            <div class="feature-box">
-                <img src="/assets/img/contact.png" alt="Contact Icon">
-            </div>
+        </div>
+    </section>
+
+    <!-- Vision Mission Section Skeleton -->
+    <section class="vision-mission-section">
+        <div class="vision-mission-container-skeleton">
+            <div class="skeleton skeleton-main-title"></div>
+            
+            <div class="skeleton skeleton-section-title"></div>
+            <div class="skeleton skeleton-paragraph vision"></div>
+            <div class="skeleton skeleton-paragraph vision"></div>
+
+            <div class="skeleton skeleton-section-title" style="margin-top: 60px;"></div>
+            <div class="skeleton skeleton-list-item"></div>
+            <div class="skeleton skeleton-list-item"></div>
+            <div class="skeleton skeleton-list-item"></div>
         </div>
     </section>
 </div>
 
-<section class="profile-section" id="profil-ravera">
-    <div class="profile-container">
-        <span class="profile-subtitle">Tentang</span>
-        <h2>Profil Ravera Creation</h2>
-        <p>
-            <strong>Ravera Creation</strong> didirikan pada tahun 2025 sebagai hasil kolaborasi strategis dari beberapa brand, yaitu SThreeK Wedding Organizer, @dewisl MakeUp Artist, serta layanan tambahan berupa sound system berpengalaman. Dengan mengusung konsep brand mashup, Ravera Creation dirancang secara menyeluruh untuk menyatukan keunggulan dari masing-masing brand, sehingga dapat membantu klien dalam menciptakan wedding dreamers dan memberikan layanan pernikahan yang lengkap, modern, dan terpercaya dalam satu platform.
-        </p>
-        <div class="social-media">
-            <h3>Our Social Media</h3>
-            <div class="social-media-icons">
-                <a href="#" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372.526-.205.972-.478 1.417-.923.445-.444.718-.891.923-1.417.198-.51.333-1.09.372-1.942C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.852-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.942-.372C10.444.01 10.171 0 8 0zm0 1.442c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.282.24.705.275 1.486.039.843.047 1.096.047 3.232s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.486a2.5 2.5 0 0 1-.599.92c-.28.28-.546.453-.92.598-.282.11-.705.24-1.486.275-.843.039-1.096.047-3.232.047s-2.389-.008-3.232-.047c-.78-.035-1.203-.166-1.486-.275a2.5 2.5 0 0 1-.92-.599c-.28-.28-.453-.546-.598-.92-.11-.282-.24-.705-.275-1.486-.039-.843-.047-1.096-.047-3.232s.008-2.389.047-3.232c.035-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.486-.275.843-.039 1.096-.047 3.232-.047zM8 4.865a3.135 3.135 0 1 0 0 6.27 3.135 3.135 0 0 0 0-6.27zM8 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm4.268-6.106a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
-                    </svg>
-                </a>
-                <a href="#" aria-label="TikTok">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
-                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
-                    </svg>
-                </a>
+<!-- ACTUAL CONTENT -->
+<div class="loaded-state">
+    <div class="main-container">
+        <header class="page-header">
+            <h1>Pelajari Lainnya Tentang Kami</h1>
+        </header>
+
+        <section class="about-section">
+            <div class="about-text">
+                <h2>
+                    Kenapa Harus<br>
+                    <span class="heading-line-2">Ravera Creation?</span>
+                </h2>
+                
+                <p class="text-dark">
+                    <strong>Ravera Creation</strong> adalah Wedding Organizer
+                    terpercaya yang membantu mewujudkan pernikahan
+                    impian anda secara elegan dan berkesan. Dengan tim
+                    profesional, layanan lengkap, dan konsep yang
+                    disesuaikan, kami hadir untuk mendampingi setiap
+                    proses hingga hari pernikahan berjalan lancar
+                    dan sempurna.
+                </p>
+                
+                <a href="#profil-ravera" class="btn-more">TENTANG ></a>
+            </div>
+            <div class="about-features">
+                <div class="feature-box">
+                    <img src="/assets/img/our-vision.png" alt="Our Vision Icon">
+                </div>
+                <div class="feature-box">
+                    <img src="/assets/img/our-mision.png" alt="Our Mission Icon">
+                </div>
+                <div class="feature-box">
+                    <img src="/assets/img/our-team.png" alt="Our Team Icon">
+                </div>
+                <div class="feature-box">
+                    <img src="/assets/img/contact.png" alt="Contact Icon">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="profile-section" id="profil-ravera">
+        <div class="profile-container">
+            <span class="profile-subtitle">Tentang</span>
+            <h2>Profil Ravera Creation</h2>
+            <p>
+                <strong>Ravera Creation</strong> didirikan pada tahun 2025 sebagai hasil kolaborasi strategis dari beberapa brand, yaitu SThreeK Wedding Organizer, @dewisl MakeUp Artist, serta layanan tambahan berupa sound system berpengalaman. Dengan mengusung konsep brand mashup, Ravera Creation dirancang secara menyeluruh untuk menyatukan keunggulan dari masing-masing brand, sehingga dapat membantu klien dalam menciptakan wedding dreamers dan memberikan layanan pernikahan yang lengkap, modern, dan terpercaya dalam satu platform.
+            </p>
+            <div class="social-media">
+                <h3>Our Social Media</h3>
+                <div class="social-media-icons">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372.526-.205.972-.478 1.417-.923.445-.444.718-.891.923-1.417.198-.51.333-1.09.372-1.942C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.852-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.942-.372C10.444.01 10.171 0 8 0zm0 1.442c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.282.24.705.275 1.486.039.843.047 1.096.047 3.232s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.486a2.5 2.5 0 0 1-.599.92c-.28.28-.546.453-.92.598-.282.11-.705.24-1.486.275-.843.039-1.096.047-3.232.047s-2.389-.008-3.232-.047c-.78-.035-1.203-.166-1.486-.275a2.5 2.5 0 0 1-.92-.599c-.28-.28-.453-.546-.598-.92-.11-.282-.24-.705-.275-1.486-.039-.843-.047-1.096-.047-3.232s.008-2.389.047-3.232c.035-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.486-.275.843-.039 1.096-.047 3.232-.047zM8 4.865a3.135 3.135 0 1 0 0 6.27 3.135 3.135 0 0 0 0-6.27zM8 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm4.268-6.106a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="interactive-line" id="scrollToTarget" title="Klik untuk melihat Visi & Misi Kami"></div>
+    <div class="interactive-line" id="scrollToTarget" title="Klik untuk melihat Visi & Misi Kami"></div>
 
-<section class="team-section" id="our-team">
-    <div class="team-container">
-        <h2>Profil Tim Ravera Creation</h2>
-        
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="team-member-photo">
-                    <img src="/assets/img/ramdhani-oktavian.png" alt="Muhammad Ramdhani Oktafian" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C5B358, #8B9548) url(\'https://via.placeholder.com/250x250?text=Ramdhani\') no-repeat center center'; this.parentElement.style.backgroundSize='cover';">
+    <section class="team-section" id="our-team">
+        <div class="team-container">
+            <h2>Profil Tim Ravera Creation</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="/assets/img/ramdhani-oktavian.png" alt="Muhammad Ramdhani Oktafian" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C5B358, #8B9548) url(\'https://via.placeholder.com/250x250?text=Ramdhani\') no-repeat center center'; this.parentElement.style.backgroundSize='cover';">
+                    </div>
+                    <h3>Muhammad Ramdhani Oktafian</h3>
+                    <div class="role">Digital Marketer & UI/UX Designer</div>
+                    <p>Ahli dalam strategi digital marketing dan perancangan pengalaman pengguna yang memukau. Berpengalaman lebih dari 5 tahun dalam industri kreatif dengan fokus pada branding dan user experience.</p>
                 </div>
-                <h3>Muhammad Ramdhani Oktafian</h3>
-                <div class="role">Digital Marketer & UI/UX Designer</div>
-                <p>Ahli dalam strategi digital marketing dan perancangan pengalaman pengguna yang memukau. Berpengalaman lebih dari 5 tahun dalam industri kreatif dengan fokus pada branding dan user experience.</p>
-            </div>
 
-            <div class="team-member">
-                <div class="team-member-photo">
-                    <img src="/assets/img/nia-yulandari.png" alt="Nia Yulandari" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C5B358, #8B9548) url(\'https://via.placeholder.com/250x250?text=Nia\') no-repeat center center'; this.parentElement.style.backgroundSize='cover';">
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="/assets/img/nia-yulandari.png" alt="Nia Yulandari" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C5B358, #8B9548) url(\'https://via.placeholder.com/250x250?text=Nia\') no-repeat center center'; this.parentElement.style.backgroundSize='cover';">
+                    </div>
+                    <h3>Nia Yulandari</h3>
+                    <div class="role">Account Manager & Data Analyst</div>
+                    <p>Spesialis dalam mengelola hubungan klien dan menganalisis data untuk mengoptimalkan layanan. Memiliki keahlian dalam project management dan business intelligence untuk memastikan kepuasan klien maksimal.</p>
                 </div>
-                <h3>Nia Yulandari</h3>
-                <div class="role">Account Manager & Data Analyst</div>
-                <p>Spesialis dalam mengelola hubungan klien dan menganalisis data untuk mengoptimalkan layanan. Memiliki keahlian dalam project management dan business intelligence untuk memastikan kepuasan klien maksimal.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="vision-mission-section" id="vision-mission">
-    <div class="vision-mission-container">
-        <h2>Visi & Misi Ravera Creation</h2>
-        
-        <h3>Visi</h3>
-        <p>
-            Menjadi platform inspiratif dan terpercaya dalam menghadirkan ide, solusi, serta layanan digital kreatif untuk mewujudkan momen pernikahan impian klien.
-        </p>
+    <section class="vision-mission-section" id="vision-mission">
+        <div class="vision-mission-container">
+            <h2>Visi & Misi Ravera Creation</h2>
+            
+            <h3>Visi</h3>
+            <p>
+                Menjadi platform inspiratif dan terpercaya dalam menghadirkan ide, solusi, serta layanan digital kreatif untuk mewujudkan momen pernikahan impian klien.
+            </p>
 
-        <h3>Misi</h3>
-        <ol>
-            <li>Memberikan jasa layanan yang unggul dengan kualitas terbaik dan harga terjangkau untuk membangun kepercayaan serta kepuasan klien.</li>
-            <li>Menyediakan platform digital yang interaktif dan user-friendly untuk membantu calon klien dalam merencanakan pernikahan secara mudah dan efisien.</li>
-            <li>Menghadirkan konten inspiratif seputar pernikahan melalui blog, portofolio digital, dan testimoni untuk memberikan referensi yang relevan dan menarik.</li>
-        </ol>
-    </div>
-</section>
+            <h3>Misi</h3>
+            <ol>
+                <li>Memberikan jasa layanan yang unggul dengan kualitas terbaik dan harga terjangkau untuk membangun kepercayaan serta kepuasan klien.</li>
+                <li>Menyediakan platform digital yang interaktif dan user-friendly untuk membantu calon klien dalam merencanakan pernikahan secara mudah dan efisien.</li>
+                <li>Menghadirkan konten inspiratif seputar pernikahan melalui blog, portofolio digital, dan testimoni untuk memberikan referensi yang relevan dan menarik.</li>
+            </ol>
+        </div>
+    </section>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Simulate loading time
+        setTimeout(function() {
+            document.body.classList.add('content-loaded');
+        }, 2000); // 2 seconds loading time
+
         const scrollLine = document.getElementById('scrollToTarget');
         const targetSection = document.getElementById('vision-mission');
         
@@ -516,6 +969,31 @@
                 }
             });
         }
+
+        // Enhanced loading simulation with progressive content reveal
+        const sections = [
+            '.page-header',
+            '.about-section', 
+            '.profile-section',
+            '.team-section',
+            '.vision-mission-section'
+        ];
+
+        sections.forEach((selector, index) => {
+            setTimeout(() => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(20px)';
+                    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+            }, 2000 + (index * 200));
+        });
     });
 </script>
 @endsection
